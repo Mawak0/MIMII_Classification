@@ -8,7 +8,7 @@ import librosa
 import numpy as np
 
 
-MODEL_DIR = "D:/SIGNAL_MODELS/"
+MODEL_DIR = "../models"
 
 # Загружаем модели и метки
 available_models = [f.stem for f in Path(MODEL_DIR).glob("*.pkl") if f.stem != "label_encoder" and f.stem != "scaler"]
