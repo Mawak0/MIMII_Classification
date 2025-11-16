@@ -82,7 +82,7 @@ if uploaded_file and selected_models:
     for model_name in selected_models:
         model = models_dict[model_name]
         # выбираем нужный формат признаков
-        if model_name in ["Logistic Regression", "KNN", "SVM", "MLP"]:
+        if model_name in ["Logistic Regression", "KNN", "MLP"]:
             probs = model.predict_proba(X_new_scaled)
         else:
             probs = model.predict_proba(X_new)
