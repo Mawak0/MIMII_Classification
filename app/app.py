@@ -141,8 +141,13 @@ if uploaded_file and selected_models:
             row[label] = float(prob)
         results.append(row)
 
-    # таблица вероятностей всех моделей
     st.subheader("📊 Все вероятности")
+
     df_probs = pd.DataFrame(results)
-    st.dataframe(df_probs.style.format("{:.3f}"))
+
+    # Определяем числовые столбцы
+    numeric_cols = df_probs.select_dtypes(include=['float', 'int']).columns
+
+    # Красиво выводим
+    st.dataframe(df_probs.style.format({col: "{:.3f}" for col in numeric_cols}))
 
